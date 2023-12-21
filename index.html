@@ -4,38 +4,76 @@
   <title>My Page</title>
   <style>
     body {
-      background-color: lightred;
-      animation: flashingBackground 1s infinite;
+      background-color: white;
+      animation: flashingBackground 5s infinite;
+      overflow: hidden; /* Hide scrollbars */
     }
 
     @keyframes flashingBackground {
-      0% { background-color: lightred; }
+      0% { background-color: white; }
       50% { background-color: #F84019; }
-      100% { background-color: lightred; }
+      100% { background-color: white; }
     }
 
     .center {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      flex-direction: column;
+      height: 100%;
     }
 
     .center img {
       max-width: 100%;
-      max-height: 100%;
+      max-height: 50%;
     }
 
     .center p {
       text-align: center;
-      font-size: 14px;
+      font-size: 50px;
+      font-family: "Helvetica Neue", sans-serif;
+      font-weight: bolder;
+    }
+    
+    .croissant {
+      position: absolute;
+      opacity: 0;
+      animation: fade-in-out 5s linear;
+    }
+
+    @keyframes fade-in-out {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="center">
-    <img src="https://www.icegif.com/wp-content/uploads/santa-icegif.gif" alt="Image">
+    <img src="santa-claus-santa.gif" alt="Gif de pere noel qui danse">
     <p>Croissantage de Noël : Joyeuses fêtes à tous !</p>
   </div>
+
+  <script>
+    function createCroissant() {
+      const croissant = document.createElement('img');
+      croissant.src = 'croissant.png';
+      croissant.classList.add('croissant');
+      croissant.style.top = Math.random() * 90 + 'vh';
+      croissant.style.left = Math.random() * 90 + 'vw';
+      document.body.appendChild(croissant);
+      setTimeout(() => {
+        croissant.remove();
+      }, 5000); // Adjust the duration as needed
+    }
+
+    setInterval(createCroissant, 1000); // Adjust the interval as needed
+  </script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <style>
     body {
       animation: flashingBackground 5s infinite;
-      overflow: hidden; /* Hide scrollbars */
+      overflow: hidden; 
     }
 
     @keyframes flashingBackground {
@@ -39,6 +39,13 @@
       font-size: 25px;
       font-family: "Helvetica Neue", sans-serif;
       font-weight: bold;
+    }
+
+    .center .texte {
+      text-align: center;
+      font-size: 15px;
+      font-family: "Helvetica Neue", sans-serif;
+      font-weight: bolder;
     }
 
     .garlande {
@@ -100,6 +107,10 @@
     <img src="santa-claus-santa.gif" alt="Gif de pere noel qui danse">
     <p class="titre">Croissantage de Noël : Joyeuses fêtes à tous !</p>
     <p class="sous-titre">Pensez à vérouiller votre poste pendant vos pauses.<br>Et à bien l'éteindre le soir.</p>
+    <p class="center texte">
+      Pour plus d'information sur la cybersécurité
+      <a target="_blank" href="https://www.stormshield.com/fr/actus/sensibilisation-une-culture-cybersecurite-efficace/">Cliquez ici</a>
+    </p>
   </div>
 
   <div class="garlande garlande-left"></div>
@@ -118,10 +129,10 @@
       document.body.appendChild(croissant);
       setTimeout(() => {
         croissant.remove();
-      }, 5000); // Adjust the duration as needed
+      }, 5000);
     }
 
-    setInterval(createCroissant, 1000); // Adjust the interval as needed
+    setInterval(createCroissant, 1000);
   </script>
 </body>
 </html>

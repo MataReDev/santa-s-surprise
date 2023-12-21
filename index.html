@@ -4,27 +4,36 @@
   <title>My Page</title>
   <style>
     body {
-      background-color: red;
+      background-color: lightred;
+      animation: flashingBackground 1s infinite;
     }
-    
-    .container {
+
+    @keyframes flashingBackground {
+      0% { background-color: lightred; }
+      50% { background-color: white; }
+      100% { background-color: lightred; }
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .center img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .center p {
       text-align: center;
-      margin-top: 100px;
-    }
-    
-    .container img {
-      width: 200px;
-      height: 200px;
-    }
-    
-    .container p {
       font-size: 14px;
-      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="center">
     <img src="path/to/your/image.jpg" alt="Image">
     <p>This is a small text.</p>
   </div>

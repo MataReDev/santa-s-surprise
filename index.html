@@ -4,7 +4,6 @@
   <title>My Page</title>
   <style>
     body {
-      background-color: white;
       animation: flashingBackground 5s infinite;
       overflow: hidden; /* Hide scrollbars */
     }
@@ -42,6 +41,27 @@
       font-weight: bold;
     }
 
+    .garlande {
+      position: absolute;
+      top: 0;
+      height: 750px;
+      width: 750px;
+      background-image: url('garland.gif');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .garlande-left {
+      left: 0;
+      rotate: -45deg;
+    }
+
+    .garlande-right {
+      top: 0;
+      right: 0;
+      rotate: 45deg;
+    }
+
     .croissant {
       position: absolute;
       opacity: 0;
@@ -59,6 +79,19 @@
         opacity: 0;
       }
     }
+
+    .sapin {
+      position: absolute;
+      bottom: 0%;
+    }
+
+    .right{
+      right: 5%
+    }
+
+    .left{
+      left: 5%
+    }
   </style>
 </head>
 <body>
@@ -68,13 +101,19 @@
     <p class="sous-titre">Pensez à verouiller votre poste pendant vos pauses.<br>Et à bien l'éteindre le soir.</p>
   </div>
 
+  <div class="garlande garlande-left"></div>
+  <div class="garlande garlande-right"></div>
+
+  <img src="sapin.gif" alt="Gif de sapin de Noël" class="sapin left">
+  <img src="sapin.gif" alt="Gif de sapin de Noël" class="sapin right">
+
   <script>
     function createCroissant() {
       const croissant = document.createElement('img');
       croissant.src = 'croissant.png';
       croissant.classList.add('croissant');
-      croissant.style.top = Math.random() * 90 + 'vh';
-      croissant.style.left = Math.random() * 90 + 'vw';
+      croissant.style.top = Math.random() * 80 + 'vh';
+      croissant.style.left = Math.random() * 80 + 'vw';
       document.body.appendChild(croissant);
       setTimeout(() => {
         croissant.remove();
